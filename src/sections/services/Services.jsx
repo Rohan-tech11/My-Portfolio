@@ -13,7 +13,7 @@ const Services = () => {
       <div className="container services__container">
         {data.map((item) => (
           <Card key={item.id} className="service light">
-            <div className="service__icon">{data.icon}</div>
+            <div className="service__icon">{item.icon}</div>
             <div className="service__title">
               <h4>{item.title}</h4>
               <p>{item.desc}</p>
