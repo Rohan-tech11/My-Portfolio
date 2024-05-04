@@ -5,6 +5,10 @@ import data from "./data";
 import { useState } from "react";
 const Portfolio = () => {
   const [projects, setProjects] = useState(data);
+  const categories = data.map((item) => item.category);
+  //... spread operator will spread the elements as each element in array
+  const uniqueCategories = ["all", ...new Set(categories)];
+  console.log(uniqueCategories);
 
   return (
     <section id="portfolio">
@@ -13,10 +17,7 @@ const Portfolio = () => {
         Check out my cool projects where i worked for one of the amazing client
       </p>
       <div className="container portfolio__container">
-        <ProjectCategories>
-          {" "}
-          <h3>insideee</h3>
-        </ProjectCategories>
+        <ProjectCategories categories={uniqueCategories}> </ProjectCategories>
         <Projects projects={projects}></Projects>
       </div>
     </section>
